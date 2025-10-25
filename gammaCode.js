@@ -1,3 +1,24 @@
+function checkTimeWithinNMinutes(timingString, n) {
+  // Format expected: 'DD-MM-YYYY HH:mm'
+  const parts = timingString.trim().split(' ');
+  if (parts.length !== 2) return false;
+
+  const [datePart, timePart] = parts;
+  const [day, month, year] = datePart.split('-').map(Number);
+  const [hours, minutes] = timePart.split(':').map(Number);
+
+  // Create Date object (month is 0-indexed)
+  const inputDate = new Date(year, month - 1, day, hours, minutes);
+  if (isNaN(inputDate.getTime())) return false;
+
+  const now = new Date();
+  const diffMs = Math.abs(now - inputDate);
+  const diffMinutes = diffMs / (1000 * 60);
+
+  return diffMinutes <= n;
+}
+
+
 //Key Pressed
 function charPress(char, ctrlReq, callback) {
   document.addEventListener('keydown', (event) => {
@@ -75,7 +96,7 @@ function checkTime(timingString) {
       const taskList = document.getElementsByClassName("ui-widget-content jqgrow ui-row-ltr")
   for (task of taskList){
   let timingString=task.children[13].innerText
-    if(checkTime2Minutes(timingString)==true) {
+    if(checkTimeWithinNMinutes(timingString, 4)==true) {
          task.children[0].click()
   }
 }
@@ -286,3 +307,4 @@ if (theCase.value === "Constantine Wilaya" || theCase.value === "Constantine Wil
 
 
  
+
