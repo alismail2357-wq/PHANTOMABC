@@ -4,14 +4,21 @@
   "description": "A simple userscript for every page",
   "version": "1.0",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "scripting"
   ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Open Gamma Settings"
+  },
   "content_scripts": [
     {
       "matches": [
-        "https://newsnoc/uiSNOC/main/service?cat=viewTaskPage_cs"
+        "https://newsnoc/uiSNOC/main/service*"
       ],
-      "js": ["gammaCode.js"]
+      "js": ["gammaCode.js", "gammaPanelOnly.js"]
     }
   ]
 }
