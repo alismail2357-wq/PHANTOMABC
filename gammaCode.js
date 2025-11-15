@@ -101,12 +101,6 @@ function checkTime(timingString) {
   }
 }
 
-
-})
-
-
-     charPress("d",false,()=>{
-  
     const claimBtn = document.querySelector("#claimTask")
     claimBtn.click()
      setTimeout(()=>{
@@ -118,17 +112,19 @@ function checkTime(timingString) {
       setTimeout(()=>{
           const success=document.querySelector("body > div.bootbox.modal.fade.bootbox-alert.in > div > div > div.modal-footer > button")
           success.click()
-      },250)
-  },350)
-  },350)
+      },150)
+  },150)
+  },150)
+
 })
+
 
 
  
 
 
 
-   charPress("x",false,()=>{
+   charPress("shift",false,()=>{
   
 let communes = document.getElementsByClassName('select2-chosen')
 let communeValue=communes[1].innerText 
