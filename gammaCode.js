@@ -135,6 +135,7 @@ function checkTime(timingString) {
 countToday++
 console.log(countToday)
 
+})
  
 
 
@@ -318,5 +319,6 @@ if (theCase.value === "Constantine Wilaya" || theCase.value === "Constantine Wil
 
 
  
+
 
 
