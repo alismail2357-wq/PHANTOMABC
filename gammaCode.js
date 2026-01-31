@@ -17,7 +17,22 @@ function charPress(char, ctrlReq, callback) {
 }
 
 
-// Function to check if the time is within 2 minutes of now
+//Approve TASK SHORTCUT
+
+
+ charPress("+",false,()=>{
+ let approveBtn = document.querySelector('#submitEditPrepaidID')
+ approveBtn.click()
+
+ setTimeout(()=>{
+  let okApprove = document.querySelector('body > div.bootbox.modal.fade.bootbox-confirm.in > div > div > div.modal-footer > button.btn.btn-primary')
+  okApprove.click()
+},200)
+
+countToday++
+console.log(countToday)
+
+})
 
 
 
@@ -208,6 +223,7 @@ if (theCase.value === "Constantine Wilaya" || theCase.value === "Constantine Wil
 
 
  
+
 
 
 
